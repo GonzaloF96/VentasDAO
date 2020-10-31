@@ -32,17 +32,20 @@ public class GrillaCliente extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-         return 4;
+         return 5;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Cliente cliente = clientes.get(rowIndex);
         switch(columnIndex){
-              case 0: return cliente.getId();
-              case 1: return cliente.getNombre();
+            
+              case 0: return cliente.getNombre();
+              case 1: return cliente.getApellido();
               case 2: return cliente.getCuil();
-              case 3: return cliente.getApellido();
+              case 3: return cliente.getRazon_social();
+              case 4: return cliente.getTipoCliente();
+              
               default: return "";
           }
         
@@ -51,11 +54,14 @@ public class GrillaCliente extends AbstractTableModel{
     @Override
     public String getColumnName(int column) {
         switch(column){
-            case 0: return "ID";
-            case 1: return "NOMBRE";
+            case 0: return "NOMBRE";
+            case 1: return "APELLIDO";
             case 2: return "CUIL";
-            case 3: return "Razon Social";
-            default: return "";
+            case 3: return "RAZON SOCIAL";
+            case 4: return "TIPO CLIENTE ID";
+            
+                    
+            default: return ""; 
         
         
         } //To change body of generated methods, choose Tools | Templates.

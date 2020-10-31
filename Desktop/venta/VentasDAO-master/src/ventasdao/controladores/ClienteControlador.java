@@ -95,10 +95,12 @@ public class ClienteControlador implements ICrud<Cliente>{
                 
                 Cliente cliente = new Cliente();
                 
-                cliente.setNombre(rs.getString("nombre"));
-                cliente.setCuil(rs.getString("documento"));
                 cliente.setId(rs.getInt("id"));
+                cliente.setNombre(rs.getString("nombre"));
                 cliente.setApellido (rs.getString("apellido"));
+                cliente.setCuil(rs.getString("cuil"));
+                cliente.setRazon_social(rs.getString("razon_social"));
+              /*  cliente.setTipoCliente(rs.getTipoCliente);*/
                 
                         //System.out.println(cliente);
                 
