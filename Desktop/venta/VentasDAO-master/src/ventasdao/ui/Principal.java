@@ -6,7 +6,9 @@
 package ventasdao.ui;
 
 import ventasdao.ui.abm.AbmCategoria;
+
 import ventasdao.ui.abm.AbmCliente;
+
 
 /**
  *
@@ -50,6 +52,11 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("File");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jmiCategoria.setText("Categoria");
         jmiCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +113,10 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -140,7 +151,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-
+ private javax.swing.JMenuItem jmiCliente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
@@ -149,3 +160,4 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiCategoria;
     // End of variables declaration//GEN-END:variables
 }
+

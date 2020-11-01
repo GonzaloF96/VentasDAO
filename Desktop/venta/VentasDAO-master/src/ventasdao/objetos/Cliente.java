@@ -73,6 +73,18 @@ public class Cliente {
     public void setCuil(String cuil) {
         this.cuil = cuil;
     }
+
+    public Cliente(Integer id, String nombre, String apellido, TipoCliente tipoCliente, String razon_social, String cuil) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipoCliente = tipoCliente;
+        this.razon_social = razon_social;
+        this.cuil = cuil;
+    }
+
+    public Cliente() {
+    }
     
     
 

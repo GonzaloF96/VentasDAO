@@ -44,7 +44,7 @@ public class ClienteControlador implements ICrud<Cliente>{
 
         connection = Conexion.obtenerConexion ();
         String sql = "INSERT INTO clientes (nombre,cuil,razon_social,Tipo_Cliente_id,apellido) VALUES (?,?,?,?,?)";
-        
+       
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, entidad.getNombre());

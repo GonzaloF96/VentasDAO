@@ -40,11 +40,12 @@ public class GrillaCliente extends AbstractTableModel{
         Cliente cliente = clientes.get(rowIndex);
         switch(columnIndex){
             
-              case 0: return cliente.getNombre();
-              case 1: return cliente.getApellido();
-              case 2: return cliente.getCuil();
-              case 3: return cliente.getRazon_social();
-              case 4: return cliente.getTipoCliente();
+              case 0: return cliente.getId();
+              case 1: return cliente.getNombre();
+              case 2: return cliente.getApellido();
+              case 3: return cliente.getCuil();
+              case 4: return cliente.getRazon_social();
+              case 5: return cliente.getTipoCliente();
               
               default: return "";
           }
@@ -54,11 +55,12 @@ public class GrillaCliente extends AbstractTableModel{
     @Override
     public String getColumnName(int column) {
         switch(column){
-            case 0: return "NOMBRE";
-            case 1: return "APELLIDO";
-            case 2: return "CUIL";
-            case 3: return "RAZON SOCIAL";
-            case 4: return "TIPO CLIENTE ID";
+            case 0: return "ID";
+            case 1: return "NOMBRE";
+            case 2: return "APELLIDO";
+            case 3: return "CUIL";
+            case 4: return "RAZON SOCIAL";
+            case 5: return "TIPO CLIENTE ID";
             
                     
             default: return ""; 
