@@ -1,5 +1,7 @@
 package ventasdao.objetos;
 
+import java.util.ArrayList;
+
 public class DetalleFactura {
     
     private Integer id;
@@ -8,7 +10,7 @@ public class DetalleFactura {
     
     private Producto productos;
     
-    private Factura facturas;
+    ArrayList<Factura> facturas = new ArrayList<>();
     
     private Double precio_total;
 
@@ -36,13 +38,15 @@ public class DetalleFactura {
         this.productos = productos;
     }
 
-    public Factura getFacturas() {
+    public ArrayList<Factura> getFacturas() {
         return facturas;
     }
 
-    public void setFacturas(Factura facturas) {
+    public void setFacturas(ArrayList<Factura> facturas) {
         this.facturas = facturas;
     }
+
+  
 
     public Double getPrecio_total() {
         return precio_total;

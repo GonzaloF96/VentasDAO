@@ -21,7 +21,7 @@ public class Conexion {
 
 
    static final String JDBC_DRIVER = "org.postgresql.Driver";  
-   static final String DB_URL = "jdbc:postgresql://localhost:5432/Prueba";
+   static final String DB_URL = "jdbc:postgresql://localhost:5432/aaa";
    //static final String DB_URL = "jdbc:mysql://localhost:3306/sales_system";
    // static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
    //  Database credentials

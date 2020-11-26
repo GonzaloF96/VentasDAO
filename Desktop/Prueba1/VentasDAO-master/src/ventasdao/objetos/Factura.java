@@ -9,9 +9,9 @@ public class Factura {
     
     private Integer id;
     
-    private String fecha_creacion;
+    private Date fecha_creacion;
     
-    private List<DetalleFactura> detallefacturas;
+    private Producto producto_id;
     
     private Cliente cliente_id;
     
@@ -20,6 +20,10 @@ public class Factura {
     private Integer numero;
     
     private String observacion;
+    
+    private Float cantidad_producto;
+    
+    private Float total_factura;
 
     public Integer getId() {
         return id;
@@ -29,22 +33,45 @@ public class Factura {
         this.id = id;
     }
 
-    public String getFecha_creacion() {
+    public Date getFecha_creacion() {
         return fecha_creacion;
     }
 
-    public void setFecha_creacion(String fecha_creacion) {
+    public void setFecha_creacion(Date fecha_creacion) {
         this.fecha_creacion = fecha_creacion;
     }
 
     
+    
 
    
+    
 
-    public void setDetallefacturas(List<DetalleFactura> detallefacturas) {
-        this.detallefacturas = detallefacturas;
+    public Producto getProducto_id() {
+        return producto_id;
     }
 
+    public void setProducto_id(Producto producto_id) {
+        this.producto_id = producto_id;
+    }
+
+    public Float getCantidad_producto() {
+        return cantidad_producto;
+    }
+
+    public void setCantidad_producto(Float cantidad_producto) {
+        this.cantidad_producto = cantidad_producto;
+    }
+
+    public Float getTotal_factura() {
+        return total_factura;
+    }
+
+    public void setTotal_factura(Float total_factura) {
+        this.total_factura = total_factura;
+    }
+
+    
     public Cliente getCliente_id() {
         return cliente_id;
     }

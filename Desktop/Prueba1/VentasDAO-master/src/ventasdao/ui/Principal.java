@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import ventasdao.ui.abm.AbmCategoria;
 import ventasdao.ui.abm.AbmCliente;
 import ventasdao.ui.abm.AbmCliente;
+import ventasdao.ui.abm.AbmDetalle_Factura;
 import ventasdao.ui.abm.AbmProducto;
 import ventasdao.ui.abm.AbmTipo_Cliente;
 import ventasdao.ui.abm.AbmaFactura;
@@ -171,6 +172,7 @@ public class Principal extends javax.swing.JFrame {
         }
         jdpContenedorPrincipal.add(abmFactura);
         abmFactura.setVisible(true);
+       
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**

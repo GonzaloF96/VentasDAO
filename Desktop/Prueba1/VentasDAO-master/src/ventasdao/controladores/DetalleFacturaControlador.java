@@ -37,8 +37,61 @@ public class DetalleFacturaControlador implements ICrud<DetalleFactura>{
     
     @Override
     public boolean crear(DetalleFactura entidad) throws SQLException, Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+         connection = Conexion.obtenerConexion ();
+        String sql = "INSERT INTO detalle_factura (producto_id,cantidad,factura_id,precion_total) VALUES (?,?,?,?)";
+   
+      /*  Date fecha = new Date (entidad.getFecha_creacion().getTime()); */ 
+         
+        try {
+            
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, entidad.getProductos().getId());
+            ps.setDouble(2, entidad.getCantidad());
+            ps.setDouble(3, entidad.getPrecio_total());
+            int count =0;
+           if(ps.executeUpdate()>0){
+             ResultSet res= ps.getGeneratedKeys();
+            
+                 if(res.next()){
+                     entidad.setId(res.getInt(1));
+                     for(int i =0; i<entidad.getFacturas().size();i++){
+                        query="INSERT INTO detalle_factura (factura_id,id) VALUES (?,?)";
+                        ps = connection.prepareStatement(sql);
+                        ps.setInt(1,entidad.getFacturas().get(i).getId());
+                        ps.setInt(2,entidad.getId());
+             
+                        if(ps.executeUpdate()>0){
+                                  count ++;
+                                 //System.out.println(count);
+                         }
+                    }
+                  /*  if(count==entidad.getFacturas().size()){
+                      connection.getConexion().commit();
+                     return true;             
+                     }else{
+                     con.getConexion().rollback();
+                      return false;
+                    }
+             
+                 }   */
+        
+                    return true;
+             }
+        } } catch (SQLException ex) {
+            Logger.getLogger(FacturaControlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }    
+        /*    ps.executeUpdate();
+            connection.close();
+            
+
+        } catch (SQLException ex) {
+            Logger.getLogger(FacturaControlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }  */
+    
 
     @Override
     public boolean eliminar(DetalleFactura entidad) throws SQLException, Exception {
